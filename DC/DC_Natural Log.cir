@@ -1,0 +1,23 @@
+* D:\OneDrive - BUET\Desktop\Project demo\DC\DC_Natural Log.sch
+
+* Schematics Version 9.2
+* Sat Sep 16 19:23:45 2023
+
+
+
+** Analysis setup **
+.tran 0.01m 10m 0 0.01m SKIPBP
+.TEMP 25
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "DC_Natural Log.net"
+
+
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END

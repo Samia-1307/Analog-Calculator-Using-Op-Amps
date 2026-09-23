@@ -1,0 +1,341 @@
+
+**** 09/16/23 01:27:21 ********* PSpice 9.2 (Oct 2000) ******** ID# 0 ********
+
+ * D:\OneDrive - BUET\Desktop\Project demo\DC\DC_addition.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.2
+* Sat Sep 16 01:27:21 2023
+
+
+
+** Analysis setup **
+.tran 0.1m 10m 0 0.1m SKIPBP
+.OP 
+
+
+* From [PSPICE NETLIST] section of C:\Program Files\Orcad\PSpice\PSpice.ini:
+.lib "nom.lib"
+
+.INC "DC_addition.net"
+
+
+
+**** INCLUDING DC_addition.net ****
+* Schematics Netlist *
+
+
+
+R_R1         b $N_0001  10k  
+R_R2         q $N_0001  10k  
+R_R54         $N_0002 b  1k  
+X_U64         0 $N_0002 $N_0003 $N_0004 b uA741
+V_V73         0 $N_0004 15
+V_V74         $N_0003 0 15
+X_U65         0 $N_0007 $N_0008 $N_0009 q uA741
+V_V75         $N_0008 0 15
+V_V76         0 $N_0009 15
+R_R56         $N_0007 q  1k  
+R_R57         p $N_0007  100k  
+R_R55         a $N_0002  100k  
+X_U1         0 $N_0001 $N_0012 $N_0013 $N_0014 uA741
+R_Rf         $N_0001 $N_0014  10k  
+E_E1         $N_0017 0 $N_0014 0 100
+R_R64         $N_0017 0  0.00001  
+V_V81         p 0 99V
+V_V1         $N_0012 0 15
+V_V2         0 $N_0013 15
+V_V80         a 0 99V
+
+**** RESUMING DC_addition.cir ****
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+
+
+.END
+
+**** 09/16/23 01:27:21 ********* PSpice 9.2 (Oct 2000) ******** ID# 0 ********
+
+ * D:\OneDrive - BUET\Desktop\Project demo\DC\DC_addition.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U64.dx        X_U64.dy        X_U65.dx        X_U65.dy        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+               X_U1.dx         X_U1.dy         
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 09/16/23 01:27:21 ********* PSpice 9.2 (Oct 2000) ******** ID# 0 ********
+
+ * D:\OneDrive - BUET\Desktop\Project demo\DC\DC_addition.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U64.qx        X_U65.qx        X_U1.qx         
+               NPN             NPN             NPN             
+          IS  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF   93.75           93.75           93.75         
+          NF    1               1               1            
+          BR    1               1               1            
+          NR    1               1               1            
+          CN    2.42            2.42            2.42         
+           D     .87             .87             .87         
+
+
+**** 09/16/23 01:27:21 ********* PSpice 9.2 (Oct 2000) ******** ID# 0 ********
+
+ * D:\OneDrive - BUET\Desktop\Project demo\DC\DC_addition.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    a)   99.0000  (    b)    -.9899  (    p)   99.0000  (    q)    -.9899      
+
+(X_U1.6)-189.5E-06 (X_U1.7)    1.9905 (X_U1.8)    1.9905 (X_U1.9)    0.0000     
+
+($N_0001) 9.179E-06                   ($N_0002) 25.04E-06                       
+
+($N_0003)   15.0000                   ($N_0004)  -15.0000                       
+
+($N_0007) 25.04E-06                   ($N_0008)   15.0000                       
+
+($N_0009)  -15.0000                   ($N_0012)   15.0000                       
+
+($N_0013)  -15.0000                   ($N_0014)    1.9806                       
+
+($N_0017)  198.0600                   (X_U1.10)    -.6077                       
+
+(X_U1.11)   14.9600                   (X_U1.12)   14.9600                       
+
+(X_U1.13)    -.5938                   (X_U1.14)    -.5938                       
+
+(X_U1.53)   14.0000                   (X_U1.54)  -14.0000                       
+
+(X_U1.90)     .1981                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U64.6) 108.9E-06                   (X_U64.7)   -1.0443                       
+
+(X_U64.8)   -1.0443                   (X_U64.9)    0.0000                       
+
+(X_U65.6) 108.9E-06                   (X_U65.7)   -1.0443                       
+
+(X_U65.8)   -1.0443                   (X_U65.9)    0.0000                       
+
+(X_U64.10)    -.6077                  (X_U64.11)   14.9600                      
+
+(X_U64.12)   14.9600                  (X_U64.13)    -.5938                      
+
+(X_U64.14)    -.5938                  (X_U64.53)   14.0000                      
+
+(X_U64.54)  -14.0000                  (X_U64.90)   -1.0889                      
+
+(X_U64.91)   40.0000                  (X_U64.92)  -40.0000                      
+
+(X_U64.99)    0.0000                  (X_U65.10)    -.6077                      
+
+(X_U65.11)   14.9600                  (X_U65.12)   14.9600                      
+
+(X_U65.13)    -.5938                  (X_U65.14)    -.5938                      
+
+(X_U65.53)   14.0000                  (X_U65.54)  -14.0000                      
+
+(X_U65.90)   -1.0889                  (X_U65.91)   40.0000                      
+
+(X_U65.92)  -40.0000                  (X_U65.99)    0.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V73       -1.667E-03
+    V_V74       -1.667E-03
+    V_V75       -1.667E-03
+    V_V76       -1.667E-03
+    V_V81       -9.900E-04
+    V_V1        -1.667E-03
+    V_V2        -1.667E-03
+    V_V80       -9.900E-04
+    X_U64.vb     1.089E-09
+    X_U64.vc     1.499E-11
+    X_U64.ve     1.334E-11
+    X_U64.vlim  -1.089E-03
+    X_U64.vlp   -4.109E-11
+    X_U64.vln   -3.891E-11
+    X_U65.vb     1.089E-09
+    X_U65.vc     1.499E-11
+    X_U65.ve     1.273E-11
+    X_U65.vlim  -1.089E-03
+    X_U65.vlp   -4.109E-11
+    X_U65.vln   -3.891E-11
+    X_U1.vb     -1.895E-09
+    X_U1.vc      1.202E-11
+    X_U1.ve      1.653E-11
+    X_U1.vlim    1.981E-04
+    X_U1.vlp    -3.980E-11
+    X_U1.vln    -4.020E-11
+
+    TOTAL POWER DISSIPATION   3.46E-01  WATTS
+
+
+**** 09/16/23 01:27:21 ********* PSpice 9.2 (Oct 2000) ******** ID# 0 ********
+
+ * D:\OneDrive - BUET\Desktop\Project demo\DC\DC_addition.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U64.ga    X_U64.gcm   X_U65.ga    X_U65.gcm   X_U1.ga   
+I-SOURCE    -4.711E-09  -3.622E-09  -4.711E-09  -3.622E-09  -1.727E-09
+
+NAME         X_U1.gcm  
+I-SOURCE    -3.622E-09
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         E_E1        X_U64.egnd  X_U65.egnd  X_U1.egnd 
+V-SOURCE     1.981E+02   0.000E+00   0.000E+00   0.000E+00
+I-SOURCE    -1.981E+07   1.089E-03   1.089E-03  -1.981E-04
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U64.fb    X_U65.fb    X_U1.fb   
+I-SOURCE     1.152E-02   1.152E-02  -2.009E-02
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U64.hlim  X_U65.hlim  X_U1.hlim 
+V-SOURCE    -1.089E+00  -1.089E+00   1.981E-01
+I-SOURCE     2.178E-12   2.178E-12  -3.962E-13
+
+
+**** DIODES
+
+
+NAME         X_U64.dc    X_U64.de    X_U64.dlp   X_U64.dln   X_U64.dp  
+MODEL        X_U64.dy    X_U64.dy    X_U64.dx    X_U64.dx    X_U64.dx  
+ID          -1.50E-11   -1.30E-11   -4.11E-11   -3.89E-11   -3.00E-11 
+VD          -1.50E+01   -1.30E+01   -4.11E+01   -3.89E+01   -3.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          2.50E-12    2.67E-12    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U65.dc    X_U65.de    X_U65.dlp   X_U65.dln   X_U65.dp  
+MODEL        X_U65.dy    X_U65.dy    X_U65.dx    X_U65.dx    X_U65.dx  
+ID          -1.50E-11   -1.30E-11   -4.11E-11   -3.89E-11   -3.00E-11 
+VD          -1.50E+01   -1.30E+01   -4.11E+01   -3.89E+01   -3.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          2.50E-12    2.67E-12    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U1.dc     X_U1.de     X_U1.dlp    X_U1.dln    X_U1.dp   
+MODEL        X_U1.dy     X_U1.dy     X_U1.dx     X_U1.dx     X_U1.dx   
+ID          -1.20E-11   -1.60E-11   -3.98E-11   -4.02E-11   -3.00E-11 
+VD          -1.20E+01   -1.60E+01   -3.98E+01   -4.02E+01   -3.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          2.77E-12    2.43E-12    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U64.q1    X_U64.q2    X_U65.q1    X_U65.q2    X_U1.q1   
+MODEL        X_U64.qx    X_U64.qx    X_U65.qx    X_U65.qx    X_U1.qx   
+IB           7.98E-08    7.97E-08    7.98E-08    7.97E-08    7.98E-08 
+IC           7.48E-06    7.47E-06    7.48E-06    7.47E-06    7.48E-06 
+VBE          5.94E-01    5.94E-01    5.94E-01    5.94E-01    5.94E-01 
+VBC         -1.50E+01   -1.50E+01   -1.50E+01   -1.50E+01   -1.50E+01 
+VCE          1.56E+01    1.56E+01    1.56E+01    1.56E+01    1.56E+01 
+BETADC       9.38E+01    9.38E+01    9.38E+01    9.38E+01    9.38E+01 
+GM           2.89E-04    2.89E-04    2.89E-04    2.89E-04    2.89E-04 
+RPI          3.24E+05    3.24E+05    3.24E+05    3.24E+05    3.24E+05 
+RX           0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       9.38E+01    9.38E+01    9.38E+01    9.38E+01    9.38E+01 
+CBX/CBX2     0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       4.60E+15    4.60E+15    4.60E+15    4.60E+15    4.60E+15 
+
+
+
+NAME         X_U1.q2   
+MODEL        X_U1.qx   
+IB           7.97E-08 
+IC           7.48E-06 
+VBE          5.94E-01 
+VBC         -1.50E+01 
+VCE          1.56E+01 
+BETADC       9.38E+01 
+GM           2.89E-04 
+RPI          3.24E+05 
+RX           0.00E+00 
+RO           1.00E+12 
+CBE          0.00E+00 
+CBC          0.00E+00 
+CJS          0.00E+00 
+BETAAC       9.38E+01 
+CBX/CBX2     0.00E+00 
+FT/FT2       4.60E+15 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+
